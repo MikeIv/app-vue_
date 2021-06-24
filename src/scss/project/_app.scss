@@ -1,0 +1,15 @@
+.app {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  width: 100%;
+
+  padding-top: 2rem;
+  box-sizing: border-box;
+}
+
+.app__logo {
+  width: 5rem;
+  height: 5rem;
+}

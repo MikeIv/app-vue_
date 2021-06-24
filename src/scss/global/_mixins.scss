@@ -52,25 +52,31 @@
 	transition: all #{$tr}s;
 }
 
-@mixin container($max-width:"120rem", $padding:"2rem") {
+// Block
+@mixin block ($padding:"2rem") {
+	display: flex;
 	width: 100%;
-	max-width: #{$max-width};
-	padding: 0 #{$padding};
+	min-height: 3rem;
+	padding: #{$padding};
 	margin: 0 auto;
+	margin-top: 3rem;
+	margin-bottom: 3rem;
+	border: 1px solid $lightgray;
+	border-radius: 0.5rem;
+
+}
+
+// Input
+@mixin input ($height:"3rem", $padding:"2rem") {
+	height: #{$height};
+	padding: 0 #{$padding};
+	border: 1px solid $lightgray;
+	border-radius: 0.3rem;
+}
+
+// Box-shadow
+@mixin b-shadow ($v:"1px", $bl:"4px") {
+	box-shadow: 0 #{$v} #{$bl} 0 rgba(0, 0, 0, 0.1);
 }
 
 
-
-// Font-size
-
-@mixin vue-h3 {
-	font-size: 2rem;
-	font-weight: normal;
-	line-height: 1.25;
-}
-
-@mixin vue-h4 {
-	font-size: 1.8rem;
-	font-weight: bold;
-	line-height: 1.25;
-}

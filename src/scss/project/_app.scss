@@ -14,6 +14,7 @@
   justify-content: flex-start;
 
   max-width: 100rem;
+  min-width: 30rem;
 
   margin: 0 auto;
   padding-top: 3rem;
@@ -33,4 +34,14 @@
   font-size: $m-Fs;
   color: $base;
 
+}
+
+.app__block {
+  @include block;
+  @include b-shadow;
+
+}
+
+.app__input {
+  @include input;
 }

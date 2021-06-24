@@ -55,6 +55,8 @@
 // Block
 @mixin block ($padding:"2rem") {
 	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
 	width: 100%;
 	min-height: 3rem;
 	padding: #{$padding};
@@ -69,8 +71,12 @@
 // Input
 @mixin input ($height:"3rem", $padding:"2rem") {
 	height: #{$height};
+	margin-top: 2rem;
+	margin-bottom: 2rem;
 	padding: 0 #{$padding};
-	border: 1px solid $lightgray;
+	font-size: $mainFs;
+	color: $darkgray;
+	border: 1px solid $gray;
 	border-radius: 0.3rem;
 }
 

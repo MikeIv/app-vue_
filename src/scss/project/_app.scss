@@ -45,3 +45,8 @@
 .app__input {
   @include input;
 }
+
+.app__txt {
+  font-size: $mainFs;
+  color: $exdarkgray;
+}

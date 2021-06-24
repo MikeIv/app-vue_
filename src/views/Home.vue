@@ -7,7 +7,9 @@
 
       <section class="app__block">
         <h2 class="v-hidden">Простой блок</h2>
-        <input type="text" class="app__input">
+        <input v-model="text" type="text" class="app__input">
+        <p class="app__txt">{{ text }}</p>
+        <button class="app__btn">Получить</button>
 
       </section>
 
@@ -28,8 +30,14 @@ export default {
   },
   data: () => ({
     title: 'Проект на Vue',
+    text: ''
 
-  })
+  }),
+  methods: {
+    getText () {
+
+    }
+  }
 
 
 }

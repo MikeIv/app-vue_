@@ -10,8 +10,11 @@
 
 .app__wrapper {
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: flex-start;
+  flex-grow: 1;
+  gap: 1rem;
 
   max-width: 100rem;
   min-width: 30rem;
@@ -19,6 +22,14 @@
   margin: 0 auto;
   padding-top: 3rem;
   box-sizing: border-box;
+}
+
+.app__header-top {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  width: 100%;
 }
 
 .app__logo {
@@ -46,7 +57,26 @@
   @include input;
 }
 
+.app__row {
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+  min-height: 4rem;
+
+  padding-left: 2rem;
+  padding-right: 2rem;
+  box-sizing: border-box;
+
+  background-color: $lightgray;
+}
+
 .app__txt {
   font-size: $mainFs;
   color: $exdarkgray;
+}
+
+.app__btn {
+  @include btn;
+  @include btn_anim;
 }

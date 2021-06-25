@@ -51,6 +51,11 @@
   @include block;
   @include b-shadow;
 
+  &--width {
+    width: 100%;
+  }
+
+
 }
 
 .app__input {

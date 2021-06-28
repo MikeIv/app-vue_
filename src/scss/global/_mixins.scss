@@ -10,6 +10,16 @@
 	}
 }
 
+
+// Text
+@mixin h3 ($size:"1.6rem", $color: "#E28229") {
+	font-size: #{$size};
+	color: #{$color};
+
+}
+
+
+
 @mixin bg ($size:"contain", $position: "center") {
 	background-size: #{$size};
 	background-position: #{$position};
@@ -17,7 +27,7 @@
 }
 
 // btn
-@mixin btn ($width:"15rem", $height:"3rem", $fs:"1.4rem") {
+@mixin btn ($width:"18rem", $height:"4rem", $fs:"1.4rem") {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -27,6 +37,9 @@
 
 	margin-top: 1rem;
 	margin-bottom: 1rem;
+	padding-left: 2rem;
+	padding-right: 2rem;
+	box-sizing: border-box;
 
 	font-size: #{$fs};
 	font-weight: 700;
@@ -87,7 +100,7 @@
 }
 
 // Input
-@mixin input ($height:"3rem", $padding:"2rem") {
+@mixin input ($height:"4rem", $padding:"2rem") {
 	height: #{$height};
 	margin-top: 2rem;
 	margin-bottom: 2rem;
@@ -96,6 +109,19 @@
 	color: $darkgray;
 	border: 1px solid $gray;
 	border-radius: 0.3rem;
+	background-color: rgba($base, 0.1);
+}
+
+// Textarea
+@mixin textarea ($height:"12rem", $padding:"2rem") {
+	height: #{$height};
+	margin-bottom: 2rem;
+	padding: #{$padding};
+	font-size: $mainFs;
+	color: $darkgray;
+	border: 1px solid $gray;
+	border-radius: 0.3rem;
+	background-color: rgba($base, 0.1);
 }
 
 // Box-shadow

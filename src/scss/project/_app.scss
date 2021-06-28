@@ -89,6 +89,52 @@
 
 
 // App
+.app__item-add {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+  width: 100%;
+
+  margin-bottom: 3rem;
+}
+
+.app__txt-row {
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+  min-height: 4rem;
+
+  padding-left: 2rem;
+  padding-right: 2rem;
+  box-sizing: border-box;
+
+  background-color: rgba($base, 0.1);
+}
+
+.app__h3 {
+  @include h3;
+}
+
+.app__item-input {
+  width: 30rem;
+  @include input;
+}
+
+.app__item-textarea {
+  width: 30rem;
+  @include textarea;
+}
+
+.app__add-item-btn {
+  @include btn;
+  @include btn_anim;
+  width: auto;
+}
+
+
 .app__list {
   display: flex;
   flex-wrap: wrap;

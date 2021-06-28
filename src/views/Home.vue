@@ -6,6 +6,7 @@
         <h1 class="app__h1">{{ title }}</h1>
       </div>
 
+      <!--   Первый блок   -->
       <section class="app__block">
         <h2 class="v-hidden">Простой блок</h2>
         <div class="app__row">
@@ -21,8 +22,9 @@
         <button class="app__btn" @click="getText">Получить</button>
         <button class="app__btn" @click="getLowerText">Нижний регистр</button>
       </section>
+      <!--   ===========   -->
 
-
+      <!--   Второй блок   -->
       <section class="app__block">
         <h2 class="v-hidden">Простой блок</h2>
         <div class="app__part">
@@ -32,11 +34,23 @@
           </div>
         </div>
       </section>
+      <!--   ===========   -->
 
+      <!--   App блок   -->
       <section class="app__block app__block--width">
         <h2 class="v-hidden">Простой блок</h2>
+        <h2 class="app__h1">{{ titleNotes }}</h2>
+        <ul class="app__list">
+          <li class="app__item-note" v-for="(note, index) in notes" :key="index">
+            <h3 class="app__item-title">{{ note.title }}</h3>
+            <p class="app__item-txt">{{ note.descr }}</p>
+            <p class="app__item-date">{{ note.date }}</p>
+
+          </li>
+        </ul>
 
       </section>
+      <!--   ===========   -->
 
     </div>
   </div>
@@ -61,9 +75,27 @@ export default {
     //  block 2
     title2: 'v-if',
     content: 'Содержание',
-    showContent: false
+    showContent: false,
 
     // block 3 Notes
+    titleNotes: 'Заметки',
+    notes: [
+      {
+        title: 'Загаловок №1',
+        descr: 'Содержание заметки',
+        date: new Date(Date.now()).toLocaleString()
+      },
+      {
+        title: 'Загаловок №2',
+        descr: 'Содержание заметки',
+        date: new Date(Date.now()).toLocaleString()
+      },
+      {
+        title: 'Загаловок №3',
+        descr: 'Содержание заметки',
+        date: new Date(Date.now()).toLocaleString()
+      }
+    ]
 
   }),
   methods: {

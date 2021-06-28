@@ -41,8 +41,9 @@
 }
 
 .app__h1 {
+  margin-bottom: 2rem;
   text-align: center;
-  font-size: $m-Fs;
+  font-size: $l-Fs;
   color: $base;
 
 }
@@ -84,4 +85,68 @@
 .app__btn {
   @include btn;
   @include btn_anim;
+}
+
+
+// App
+.app__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: flex-start;
+  gap: 2rem;
+
+  width: 100%;
+}
+
+.app__item-note {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  width: 44%;
+  min-height: 5rem;
+
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  box-sizing: border-box;
+
+  background-color: rgba($vue, 0.1);
+  border: 1px solid $lightgray;
+  border-radius: 0.5rem;
+  @include b-shadow;
+}
+
+.app__item-title {
+  width: 100%;
+
+  margin-bottom: 2rem;
+
+  text-align: center;
+  font-size: $m-Fs;
+  font-weight: 500;
+  color: $darkvue;
+}
+
+.app__item-txt {
+  width: 100%;
+  margin-bottom: 1rem;
+
+  margin-bottom: 1rem;
+
+  text-align: justify;
+  font-size: $s-Fs;
+  color: $base;
+}
+
+.app__item-date {
+  width: 100%;
+
+  margin-bottom: 1rem;
+
+  text-align: right;
+  font-size: $xxs-Fs;
 }

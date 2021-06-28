@@ -150,7 +150,6 @@ export default {
       this.message = null
       this.note.title = ''
       this.note.descr = ''
-
     }
   },
   computed: {
@@ -159,6 +158,7 @@ export default {
     }
   }
 
-
 }
+
+
 </script>

@@ -147,9 +147,10 @@ export default {
         descr,
         date: new Date(Date.now()).toLocaleString(),
       })
+      this.message = null
       this.note.title = ''
       this.note.descr = ''
-      this.message = null
+
     }
   },
   computed: {

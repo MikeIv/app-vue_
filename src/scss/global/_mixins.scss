@@ -31,12 +31,15 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	flex-shrink: 1;
 
-	width: #{$width};
+	min-width: #{$width};
 	height: #{$height};
 
 	margin-top: 1rem;
 	margin-bottom: 1rem;
+	margin-left: auto;
+	margin-right: auto;
 	padding-left: 2rem;
 	padding-right: 2rem;
 	box-sizing: border-box;
@@ -99,10 +102,18 @@
 
 }
 
+// Label
+@mixin label ($height:"2rem", $padding:"1rem") {
+	height: #{$height};
+	margin-top: 2rem;
+	padding: 0 #{$padding};
+	font-size: $xs-Fs;
+	color: $darkgray;
+}
+
 // Input
 @mixin input ($height:"4rem", $padding:"2rem") {
 	height: #{$height};
-	margin-top: 2rem;
 	margin-bottom: 2rem;
 	padding: 0 #{$padding};
 	font-size: $mainFs;

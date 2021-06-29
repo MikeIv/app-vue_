@@ -116,6 +116,14 @@
 
 .app__h3 {
   @include h3;
+
+  &--gray {
+    color: $darkgray;
+  }
+}
+
+.app__item-label {
+  @include label;
 }
 
 .app__item-input {
@@ -131,7 +139,6 @@
 .app__add-item-btn {
   @include btn;
   @include btn_anim;
-  width: auto;
 }
 
 

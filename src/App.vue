@@ -2,22 +2,17 @@
   <div id="app">
     <header id="nav" class="header_app">
       <router-link to="/">Главная</router-link>
-
     </header>
+
     <router-view/>
+
   </div>
 </template>
 
 
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+
 
 #nav {
 

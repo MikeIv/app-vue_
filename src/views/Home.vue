@@ -43,12 +43,12 @@
 
         <!--    add note    -->
         <div class="app__item-add">
+
           <div class="app__txt-row">
-            <h3 class="app__h3">{{ message }}</h3>
+            <message v-if="message" :message="message" />
           </div>
-          <input v-model="note.title" type="text" class="app__item-input">
-          <textarea v-model="note.descr" class="app__item-textarea"></textarea>
-          <button @click="addNote" class="app__add-item-btn">Добавить заметку</button>
+
+          <newNote :note="note" @addItem="addNote"/>
         </div>
 
         <!--    list of notes    -->
@@ -75,11 +75,15 @@
 <script>
 // @ is an alias to /src
 
+import message from '@/components/Message.vue'
+import newNote from '@/components/NewNote.vue'
+
 
 export default {
   name: 'Home',
   components: {
-
+    message,
+    newNote
   },
   data: () => ({
     title: 'Проект на Vue',

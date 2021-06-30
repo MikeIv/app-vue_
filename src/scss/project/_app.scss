@@ -63,6 +63,16 @@
   @include input;
 }
 
+.app__row-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  width: 100%;
+
+  margin-bottom: 2rem;
+}
+
 .app__row {
   display: flex;
   align-items: center;
@@ -129,6 +139,11 @@
 .app__item-input {
   width: 30rem;
   @include input;
+
+  &::placeholder {
+    font-weight: 300;
+    color: $gray;
+  }
 }
 
 .app__item-textarea {
@@ -153,6 +168,7 @@
 }
 
 .app__item-note {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -171,6 +187,39 @@
   border: 1px solid $lightgray;
   border-radius: 0.5rem;
   @include b-shadow;
+
+  transition: 0.3s cubic-bezier(.12,.38,.77,.73);
+
+  &:hover {
+    transform: translateY(-0.5rem);
+    transition: 0.3s cubic-bezier(.12,.38,.77,.73);
+  }
+}
+
+.app__item-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 4rem;
+  height: 4rem;
+
+  cursor: pointer;
+}
+
+.app__icon {
+  width: 4rem;
+  height: 4rem;
+
+  fill: $darkgray;
+
+  &:hover {
+    fill: $darkvue;
+  }
 }
 
 .app__item-title {

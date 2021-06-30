@@ -9,14 +9,16 @@
       <!--   Первый блок   -->
       <section class="app__block">
         <h2 class="v-hidden">Простой блок</h2>
-        <div class="app__row">
-          <p class="app__txt">{{ text }}</p>
-        </div>
-        <div class="app__row">
-          <p class="app__txt">{{ textLower }}</p>
-        </div>
-        <div class="app__row">
-          <p class="app__txt">{{ toLower }}</p>
+        <div class="app__row-block">
+          <div class="app__row">
+            <p class="app__txt">{{ text }}</p>
+          </div>
+          <div class="app__row">
+            <p class="app__txt">{{ textLower }}</p>
+          </div>
+          <div class="app__row">
+            <p class="app__txt">{{ toLower }}</p>
+          </div>
         </div>
         <input v-model="text" type="text" class="app__input">
         <button class="app__btn" @click="getText">Получить</button>
@@ -52,14 +54,7 @@
         </div>
 
         <!--    list of notes    -->
-        <ul class="app__list">
-          <li class="app__item-note" v-for="(note, index) in notes" :key="index">
-            <h3 class="app__item-title">{{ note.title }}</h3>
-            <p class="app__item-txt">{{ note.descr }}</p>
-            <p class="app__item-date">{{ note.date }}</p>
-
-          </li>
-        </ul>
+        <notes :notes="notes" @remove="removeNote"/>
 
       </section>
       <!--   ===========   -->
@@ -77,13 +72,15 @@
 
 import message from '@/components/Message.vue'
 import newNote from '@/components/NewNote.vue'
+import notes from '@/components/Notes.vue'
 
 
 export default {
   name: 'Home',
   components: {
     message,
-    newNote
+    newNote,
+    notes
   },
   data: () => ({
     title: 'Проект на Vue',
@@ -154,6 +151,10 @@ export default {
       this.message = null
       this.note.title = ''
       this.note.descr = ''
+    },
+
+    removeNote (index) {
+      this.notes.splice(index, 1)
     }
   },
   computed: {

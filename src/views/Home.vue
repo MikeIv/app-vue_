@@ -38,6 +38,8 @@
       </section>
       <!--   ===========   -->
 
+
+
       <!--   App блок   -->
       <section class="app__block app__block--width">
         <h2 class="v-hidden">Простой блок</h2>

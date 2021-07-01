@@ -252,3 +252,17 @@
   text-align: right;
   font-size: $xxs-Fs;
 }
+
+
+// Title Filter Style
+.app__h-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 100%;
+  min-height: 4rem;
+
+  margin-bottom: 3rem;
+
+}

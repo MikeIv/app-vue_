@@ -55,6 +55,12 @@
           <newNote :note="note" @addItem="addNote"/>
         </div>
 
+        <!--    Title Filter Style    -->
+        <div class="app__h-row">
+          <h2 class="app__h-row-h2">{{ titlenotes }}</h2>
+          <div class="app__h-row-toggle"></div>
+        </div>
+
         <!--    list of notes    -->
         <notes :notes="notes" @remove="removeNote"/>
 
@@ -86,6 +92,7 @@ export default {
   },
   data: () => ({
     title: 'Проект на Vue',
+    titlenotes: 'Заметки',
     text: '',
     textLower: '',
 
@@ -162,7 +169,7 @@ export default {
   computed: {
     toLower () {
       return this.text.toLowerCase()
-    }
+    },
   }
 
 }

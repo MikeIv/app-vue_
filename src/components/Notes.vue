@@ -3,7 +3,7 @@
     <li class="app__item-note" v-for="(note, index) in notes" :key="index">
       <h3 class="app__item-title">{{ note.title }}</h3>
       <p class="app__item-txt">{{ note.descr }}</p>
-      <p class="app__item-date">{{ note.date }}</p>
+      <p class="app__item-date">{{ now }}</p>
 
       <div class="app__item-close" @click="removeNote(index)">
         <svg class="app__icon" role="button">
@@ -27,6 +27,11 @@ export default {
     removeNote (index) {
       console.log(`remove item id= ${index}`)
       this.$emit('remove', index)
+    }
+  },
+  computed: {
+    now () {
+      return new Date().toLocaleString()
     }
   }
 }

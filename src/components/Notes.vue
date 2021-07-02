@@ -1,6 +1,6 @@
 <template>
   <ul class="app__list">
-    <li class="app__item-note" v-for="(note, index) in notes" :key="index">
+    <li class="app__item-note" v-for="(note, index) in notes" :key="index" :class="{ width: !grid }">
       <h3 class="app__item-title">{{ note.title }}</h3>
       <p class="app__item-txt">{{ note.descr }}</p>
       <p class="app__item-date">{{ now }}</p>
@@ -20,6 +20,10 @@ export default {
   props: {
     notes: {
       type: Array,
+      requered: true
+    },
+    grid: {
+      type: Boolean,
       requered: true
     }
   },

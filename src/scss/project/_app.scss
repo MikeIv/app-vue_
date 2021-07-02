@@ -194,6 +194,10 @@
     transform: translateY(-0.5rem);
     transition: 0.3s cubic-bezier(.12,.38,.77,.73);
   }
+
+  &.width {
+    width: 100%;
+  }
 }
 
 .app__item-close {
@@ -265,4 +269,60 @@
 
   margin-bottom: 3rem;
 
+  border-bottom: 1px solid $vue;
+
+}
+
+.app__h-row-h2 {
+  font-size: $m-Fs;
+  color: $darkvue;
+}
+
+.app__h-row-toggle {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-shrink: 1;
+
+
+}
+
+.app__icon-cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 4rem;
+  height: 4rem;
+
+  cursor: pointer;
+
+  &.active .app__item-icon {
+    fill: $darkvue;
+  }
+}
+
+.app__item-icon {
+  width: 4rem;
+  height: 4rem;
+
+  fill: $darkgray;
+
+  &:hover {
+    fill: $darkvue;
+  }
+}
+
+.app__search {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 1;
+
+  height: 4rem;
+}
+
+.app__search-input {
+  @include input;
 }

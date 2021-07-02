@@ -121,6 +121,12 @@
 	border: 1px solid $gray;
 	border-radius: 0.3rem;
 	background-color: rgba($base, 0.1);
+
+	&::placeholder {
+		font-size: $mainFs;
+		font-weight: 300;
+		color: $gray;
+	}
 }
 
 // Textarea

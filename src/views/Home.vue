@@ -58,11 +58,27 @@
         <!--    Title Filter Style    -->
         <div class="app__h-row">
           <h2 class="app__h-row-h2">{{ titlenotes }}</h2>
-          <div class="app__h-row-toggle"></div>
+
+          <search :value="search" />
+
+          <!-- toggle -->
+          <div class="app__h-row-toggle">
+            <div class="app__icon-cell" :class="{ active: grid }" @click="grid = true">
+              <svg class="app__item-icon" role="button">
+                <use xlink:href="#icon-blocks"></use>
+              </svg>
+            </div>
+            <div class="app__icon-cell" :class="{ active: !grid }" @click="grid = false">
+              <svg class="app__item-icon" role="button">
+                <use xlink:href="#icon-menu"></use>
+              </svg>
+            </div>
+
+          </div>
         </div>
 
         <!--    list of notes    -->
-        <notes :notes="notes" @remove="removeNote"/>
+        <notes :notes="notes" @remove="removeNote" :grid="grid"/>
 
       </section>
       <!--   ===========   -->
@@ -81,6 +97,7 @@
 import message from '@/components/Message.vue'
 import newNote from '@/components/NewNote.vue'
 import notes from '@/components/Notes.vue'
+import search from '@/components/Search.vue'
 
 
 export default {
@@ -88,7 +105,8 @@ export default {
   components: {
     message,
     newNote,
-    notes
+    notes,
+    search
   },
   data: () => ({
     title: 'Проект на Vue',
@@ -103,10 +121,12 @@ export default {
 
     // block 3 Notes
     titleNotes: 'Заметки',
+    search: '',
     message: null,
+    grid: true,
     note: {
       title: '',
-      descr: ''
+      descr: '',
     },
     notes: [
       {

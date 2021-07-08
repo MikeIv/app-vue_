@@ -59,7 +59,7 @@
         <div class="app__h-row">
           <h2 class="app__h-row-h2">{{ titlenotes }}</h2>
 
-          <search :value="search" />
+          <search :value="search" @search="search = $event" />
 
           <!-- toggle -->
           <div class="app__h-row-toggle">
@@ -78,8 +78,15 @@
         </div>
 
         <!--    list of notes    -->
-        <notes :notes="notes" @remove="removeNote" :grid="grid"/>
+        <notes :notes="notesFilter" @remove="removeNote" :grid="grid"/>
 
+      </section>
+      <!--   ===========   -->
+
+      <!--   Modals модальные окна   -->
+      <section class="app__block">
+        <h2 class="v-hidden">Раздел модальных окон</h2>
+        <modal :modal="modal" />
       </section>
       <!--   ===========   -->
 
@@ -98,6 +105,7 @@ import message from '@/components/Message.vue'
 import newNote from '@/components/NewNote.vue'
 import notes from '@/components/Notes.vue'
 import search from '@/components/Search.vue'
+import modal from '@/components/Modal.vue'
 
 
 export default {
@@ -106,7 +114,8 @@ export default {
     message,
     newNote,
     notes,
-    search
+    search,
+    modal,
   },
   data: () => ({
     title: 'Проект на Vue',
@@ -144,7 +153,12 @@ export default {
         descr: 'Содержание заметки',
         date: new Date(Date.now()).toLocaleString()
       }
-    ]
+    ],
+
+    // Modal
+    modal: {
+      title: 'Модальные окна',
+    }
 
   }),
   methods: {
@@ -189,6 +203,26 @@ export default {
   computed: {
     toLower () {
       return this.text.toLowerCase()
+    },
+
+    //  App
+    notesFilter () {
+      let array = this.notes,
+          search = this.search
+      if (!search) return array
+
+      //  Убираем пробелы и заглавные буквы
+      search = search.trim().toLowerCase()
+      //  Filter
+      array = array.filter(function (item)
+      {
+        if(item.title.toLowerCase().indexOf(search) !== -1 ){
+          return item
+        }
+      })
+    //  Error
+      return array
+
     },
   }
 

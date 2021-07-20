@@ -6,6 +6,9 @@ import store from './store'
 
 import './scss/styles.scss'
 
+import Vuelidate from 'vuelidate'
+Vue.use(Vuelidate)
+
 Vue.config.productionTip = false
 Vue.config.devtools = true
 

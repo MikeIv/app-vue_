@@ -89,6 +89,7 @@
         <div class="app__btn-wrap">
           <button class="app__modal-btn" @click="modalOne = !modalOne">Открыть</button>
           <button class="app__modal-btn" @click="modalTwo.show = !modalTwo.show">Форма</button>
+          <button class="app__modal-btn" @click="modalValidate = !modalValidate">Форма +</button>
         </div>
 
         <!--   Первое модальное окно     -->
@@ -123,7 +124,9 @@
           </div>
         </modal>
 
+        <!--   Модальное окно с валидацией    -->
 
+        <modalvalidate v-if="modalValidate" />
 
 
       </section>
@@ -145,6 +148,7 @@ import newNote from '@/components/NewNote.vue'
 import notes from '@/components/Notes.vue'
 import search from '@/components/Search.vue'
 import modal from '@/components/Modal.vue'
+import modalvalidate from '@/components/ModalValidate.vue'
 
 
 export default {
@@ -155,6 +159,7 @@ export default {
     notes,
     search,
     modal,
+    modalvalidate,
   },
   data: () => ({
     title: 'Проект на Vue',
@@ -203,7 +208,8 @@ export default {
       show: false,
       name: '',
       email: '',
-    }
+    },
+    modalValidate: false,
 
   }),
   methods: {
@@ -251,6 +257,9 @@ export default {
         name: this.modalTwo.name,
         email: this.modalTwo.email,
       })
+      this.modalTwo.name = ''
+      this.modalTwo.email = ''
+      this.modalTwo.show = false
     },
   },
   computed: {

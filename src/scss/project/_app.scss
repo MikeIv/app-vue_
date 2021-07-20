@@ -329,12 +329,28 @@
 }
 
 // Modal
+.app__btn-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+
+  width: 100%;
+  min-height: 3rem;
+}
+
+.app__modal-btn {
+  @include btn;
+}
+
+
 .app__modal-wrapper {
   position: fixed;
   top: 0;
   left: 0;
 
-  display: none;
+  display: flex;
   justify-content: center;
   align-items: center;
 
@@ -345,6 +361,8 @@
 
   z-index: 10;
 
+  transition: 0.5s;
+
 }
 
 .app__modal-content {
@@ -353,12 +371,104 @@
   flex-direction: column;
   justify-content: flex-start;
 
-  width: 30rem;
-  min-height: 7rem;
+  min-width: 30rem;
+  max-width: 50rem;
+  min-height: 10rem;
 
   padding: 2rem;
 
   background-color: $white;
   border-radius: 0.5rem;
   z-index: 1;
+
+  transition: 0.5s;
 }
+
+.app__modal-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: 2rem;
+
+  margin-bottom: 1rem;
+
+}
+
+.app__modal-h2 {
+
+  font-size: $xs-Fs;
+  font-weight: 400;
+  color: $base;
+
+  user-select: none;
+}
+
+.app__modal-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 3rem;
+  height: 3rem;
+}
+
+
+.app__modal-list {
+  display: flex;
+
+}
+
+
+
+.app__modal-slot {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  width: 100%;
+}
+
+.app__modal-h3 {
+  width: 100%;
+
+  margin-bottom: 1rem;
+
+  text-align: center;
+  font-size: $mainFs;
+  color: $darkgray;
+}
+
+.app__modal-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+  width: 100%;
+  max-width: 35rem;
+}
+
+.app__modal-label {
+  @include label;
+
+}
+
+.app__modal-label-txt {
+  margin-bottom: 0.3rem;
+  font-size: $xxs-Fs;
+  font-weight: 300;
+  color: $base;
+}
+
+.app__modal-input {
+  @include input;
+
+  width: 100%;
+}
+

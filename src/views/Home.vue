@@ -86,7 +86,46 @@
       <!--   Modals модальные окна   -->
       <section class="app__block">
         <h2 class="v-hidden">Раздел модальных окон</h2>
-        <modal :modal="modal" />
+        <div class="app__btn-wrap">
+          <button class="app__modal-btn" @click="modalOne = !modalOne">Открыть</button>
+          <button class="app__modal-btn" @click="modalTwo.show = !modalTwo.show">Форма</button>
+        </div>
+
+        <!--   Первое модальное окно     -->
+        <modal :modal="modal"
+               v-show="modalOne"
+               @close="modalOne = false"
+        >
+          <div class="app__modal-slot" slot="content">
+            <h3 class="app__modal-h3">Новый контент</h3>
+            <button class="app__modal-btn" @click="modalOne = !modalOne">Закрыть</button>
+          </div>
+        </modal>
+
+        <!--   Второе модальное окно     -->
+        <modal :modal="modal"
+               v-show="modalTwo.show"
+               @close="modalTwo.show = false"
+               title="Форма обратной связи"
+        >
+          <div class="app__modal-slot" slot="content">
+            <h3 class="app__modal-h3">Форма обратной связи</h3>
+            <form class="app__modal-form" @submit.prevent="submit">
+
+              <label class="app__modal-label">Имя</label>
+              <input type="text" class="app__modal-input" v-model="modalTwo.name">
+
+              <label class="app__modal-label">E-mail</label>
+              <input type="text" class="app__modal-input" v-model="modalTwo.email">
+
+              <button class="app__modal-btn">Отправить</button>
+            </form>
+          </div>
+        </modal>
+
+
+
+
       </section>
       <!--   ===========   -->
 
@@ -157,7 +196,13 @@ export default {
 
     // Modal
     modal: {
-      title: 'Модальные окна',
+      title: 'Модальное окно',
+    },
+    modalOne: false,
+    modalTwo: {
+      show: false,
+      name: '',
+      email: '',
     }
 
   }),
@@ -198,7 +243,15 @@ export default {
 
     removeNote (index) {
       this.notes.splice(index, 1)
-    }
+    },
+
+    //  Modal
+    submit () {
+      console.log({
+        name: this.modalTwo.name,
+        email: this.modalTwo.email,
+      })
+    },
   },
   computed: {
     toLower () {
@@ -220,7 +273,7 @@ export default {
           return item
         }
       })
-    //  Error
+      //  Error
       return array
 
     },

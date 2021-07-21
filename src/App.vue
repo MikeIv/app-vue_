@@ -1,7 +1,9 @@
 <template>
   <div id="app">
     <header id="nav" class="header_app">
-      <router-link to="/">Главная</router-link>
+      <nav class="header_app__list" v-for="link in links" :key="link.title">
+        <router-link :to="link.url" :title="link.title" class="header_app__item">{{ link.title }}</router-link>
+      </nav>
     </header>
 
     <router-view/>
@@ -10,13 +12,25 @@
 </template>
 
 
+<script>
+  export default {
+    data: () => ({
+      links: [
+        { title: 'Главная', url: '/' },
+        { title: 'Приложение', url: '/dev' },
+      ]
+    })
+  }
+</script>
+
+
 
 <style lang="scss">
 
-
 #nav {
 
-  a {
+  .header_app__item {
+
     font-size: 1.6rem;
     font-weight: bold;
     color: #2c3e50;

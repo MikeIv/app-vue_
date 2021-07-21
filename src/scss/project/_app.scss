@@ -48,6 +48,14 @@
 
 }
 
+.app__h2 {
+ @include h2;
+}
+
+.app__h3 {
+ @include h3;
+}
+
 .app__block {
   @include block;
   @include b-shadow;

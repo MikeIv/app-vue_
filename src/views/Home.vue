@@ -126,7 +126,7 @@
 
         <!--   Модальное окно с валидацией    -->
 
-        <modalvalidate v-if="modalValidate" />
+        <modalvalidate v-show="modalValidate" @close="modalValidate = false" />
 
 
       </section>

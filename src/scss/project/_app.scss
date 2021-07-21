@@ -454,16 +454,31 @@
   max-width: 35rem;
 }
 
+.app__modal-form-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+  width: 100%;
+  max-width: 35rem;
+}
+
 .app__modal-label {
   @include label;
 
+  margin-right: auto;
+
 }
 
-.app__modal-label-txt {
-  margin-bottom: 0.3rem;
+.app__modal-label-error {
+  position: absolute;
+  top: 2.2rem;
+  right: 0;
+
   font-size: $xxs-Fs;
-  font-weight: 300;
-  color: $base;
+  color: $red;
 }
 
 .app__modal-input {

@@ -162,7 +162,7 @@ export default {
     modalvalidate,
   },
   data: () => ({
-    title: 'Проект на Vue',
+    title: 'Компоненты Vue',
     titlenotes: 'Заметки',
     text: '',
     textLower: '',

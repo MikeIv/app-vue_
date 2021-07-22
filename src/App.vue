@@ -36,6 +36,9 @@
     color: #2c3e50;
     text-decoration: none;
 
+    outline: none;
+
+
     &.router-link-exact-active {
       color: #42b983;
     }

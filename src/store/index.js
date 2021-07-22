@@ -3,6 +3,8 @@ import Vuex from 'vuex'
 
 Vue.use(Vuex)
 
+import dev from './dev'
+
 export default new Vuex.Store({
   state: {
   },
@@ -10,6 +12,10 @@ export default new Vuex.Store({
   },
   actions: {
   },
+  getters: {
+  },
+
   modules: {
+    dev
   }
 })

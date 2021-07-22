@@ -13,12 +13,14 @@
 
 // Typography
 @mixin h2 ($size:"1.8rem", $color: "#195676") {
+	margin-bottom: 1rem;
 	font-size: #{$size};
 	color: #{$color};
 
 }
 
 @mixin h3 ($size:"1.6rem", $color: "#E28229") {
+	margin-bottom: 1rem;
 	font-size: #{$size};
 	color: #{$color};
 

@@ -39,6 +39,7 @@ name: "Modal",
 }
 </script>
 
+
 <style lang="scss" scoped>
 
 // Animation

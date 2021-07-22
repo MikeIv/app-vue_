@@ -16,12 +16,17 @@
 	margin-bottom: 1rem;
 	font-size: #{$size};
 	color: #{$color};
-
 }
 
 @mixin h3 ($size:"1.6rem", $color: "#E28229") {
 	margin-bottom: 1rem;
 	font-size: #{$size};
+	color: #{$color};
+}
+
+@mixin txt ($size:"1.4rem", $lheight:"1.8rem", $color: "#000000") {
+	font-size: #{$size};
+	line-height: #{$lheight};
 	color: #{$color};
 
 }

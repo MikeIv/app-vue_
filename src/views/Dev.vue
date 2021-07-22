@@ -17,9 +17,9 @@
 
       <!--   Блок карточек>   -->
       <section class="app__block dev__block">
-        <h2 class="app__h2"> {{ devhead }}</h2>
+        <h2 class="dev__h2"> {{ devhead }}</h2>
 
-        <cardItem />
+        <cardItem v-for="item in cardList" :key="item.id" :item="item" />
 
       </section>
     </div>

@@ -3,9 +3,12 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 
-import Vuelidate from 'vuelidate'
 // Plugins
-Vue.use(Vuelidate)
+import Vuelidate from 'vuelidate';
+import VueCarousel from 'vue-carousel';
+
+Vue.use(Vuelidate, VueCarousel);
+
 
 import './scss/styles.scss'
 

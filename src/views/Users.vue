@@ -7,14 +7,14 @@
           <thead>
           <tr class="users__table-row">
             <th class="users__table-th">Имя</th>
-            <th class="users__table-th">Счет </th>
+            <th class="users__table-th">Возраст </th>
             <th class="users__table-th">Пол</th>
           </tr>
           </thead>
           <tbody>
-          <tr v-for="user in users" :key="user.id" class="users__table-row">
-            <td class="users__table-td">{{ user.name }}</td>
-            <td class="users__table-td">{{ user.count }}</td>
+          <tr v-for="user in users" :key="user.index" class="users__table-row">
+            <td class="users__table-td">{{ user.name.first }}</td>
+            <td class="users__table-td">{{ user.dob.age }}</td>
             <td class="users__table-td">{{ user.gender }}</td>
           </tr>
           </tbody>
@@ -38,22 +38,12 @@ export default {
   }),
   mounted() {
     axios
-        .get('https://api.genderize.io/?name[]=peter&name[]=lois&name[]=stevie&name[]=anna')
-        .then(response => (this.users = response.data));
+        .get('https://randomuser.me/api/?results=5')
+        .then(response => (this.users = response.data.results));
 
-    console.log(this.users)
+
   }
-  // created() {
-  //   axios
-  //       .post('https://api.myjson.com/bins/rzgya')
-  //       .then(response => {
-  //         console.log(response)
-  //       })
-  //   // this.users =[
-  //   //   { id: 1, name: 'Anna', age: 33, gender : 'female' },
-  //   //   { id: 2, name: 'Olya', age: 48, gender : 'female' }
-  //   // ]
-  // }
+
 }
 </script>
 

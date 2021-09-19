@@ -30,6 +30,10 @@ tr {
   display: contents;
 }
 
+.users__table-row {
+
+}
+
 
 tr:nth-child(even) td {
   background: $lightgray;
@@ -40,6 +44,7 @@ tr:nth-child(even) td {
   display: flex;
   align-items: center;
   min-height: 4rem;
+  margin-bottom: 1rem;
   padding-left: 2rem;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -62,8 +67,11 @@ tr:nth-child(even) td {
 }
 
 .users__table-td {
+  @include b-shadow;
   font-size: $mainFs;
   color: $exdarkgray;
+
+  border-radius: 0.5rem;
 }
 
 

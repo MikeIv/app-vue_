@@ -19,7 +19,8 @@
   border-collapse: collapse;
   min-width: 100%;
   grid-template-columns:
-    minmax(150px, 1fr)
+    minmax(50px, 0.5fr)
+    minmax(150px, 1.67fr)
     minmax(150px, 1.67fr)
     minmax(150px, 1.67fr);
 }
@@ -72,6 +73,19 @@ tr:nth-child(even) td {
   color: $exdarkgray;
 
   border-radius: 0.5rem;
+
+  & img {
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+
+  }
+}
+
+// Data
+.data {
+  font-size: 16px;
+  line-height: 28px;
 }
 
 

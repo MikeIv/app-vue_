@@ -6,6 +6,7 @@
         <table class="users__table">
           <thead>
           <tr class="users__table-row">
+            <th class="users__table-th">Фото</th>
             <th class="users__table-th">Имя</th>
             <th class="users__table-th">Возраст </th>
             <th class="users__table-th">Пол</th>
@@ -13,6 +14,7 @@
           </thead>
           <tbody>
           <tr v-for="user in users" :key="user.index" class="users__table-row">
+            <td class="users__table-td"><img :src='user.picture.thumbnail' alt=""></td>
             <td class="users__table-td">{{ user.name.first }}</td>
             <td class="users__table-td">{{ user.dob.age }}</td>
             <td class="users__table-td">{{ user.gender }}</td>
@@ -20,7 +22,7 @@
           </tbody>
         </table>
 
-        <div class="">{{ users }}</div>
+        <div class="data">{{ users }}</div>
       </div>
     </section>
   </div>
@@ -33,16 +35,20 @@ export default {
   name: "Users",
 
   data: () => ({
-    users: []
+    users: [],
+    userProfilePic: null
 
   }),
   mounted() {
     axios
         .get('https://randomuser.me/api/?results=5')
         .then(response => (this.users = response.data.results));
-
-
-  }
+  },
+  methods: {
+    getImage () {
+      this.userProfilePic = 'https://picsum.photos/id/100'
+    }
+  },
 
 }
 </script>

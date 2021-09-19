@@ -35,19 +35,13 @@ export default {
   name: "Users",
 
   data: () => ({
-    users: [],
-    userProfilePic: null
+    users: []
 
   }),
   mounted() {
     axios
         .get('https://randomuser.me/api/?results=5')
         .then(response => (this.users = response.data.results));
-  },
-  methods: {
-    getImage () {
-      this.userProfilePic = 'https://picsum.photos/id/100'
-    }
   },
 
 }

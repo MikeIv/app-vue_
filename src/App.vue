@@ -18,6 +18,7 @@
       links: [
         { title: 'Главная', url: '/' },
         { title: 'Приложение', url: '/dev' },
+        { title: 'Пользователи', url: '/users' },
       ]
     })
   }

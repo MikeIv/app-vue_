@@ -7,6 +7,7 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
+    "@cwespb/synergyui": "1.0.8",
     "axios": "^0.21.4",
     "core-js": "^3.6.5",
     "vue": "^2.6.14",

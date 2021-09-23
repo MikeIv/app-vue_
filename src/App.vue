@@ -20,7 +20,9 @@
         { title: 'Приложение', url: '/dev' },
         { title: 'Пользователи', url: '/users' },
       ]
-    })
+    }),
+    methods: {
+    }
   }
 </script>
 

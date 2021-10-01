@@ -1,0 +1,17 @@
+.notify {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 30rem;
+  min-height: 40rem;
+
+  margin: 0 auto;
+  padding: 2rem;
+  box-sizing: border-box;
+
+  background-color: lighten($lightgray, 4%);
+  border-radius: 1rem;
+  @include b-shadow;
+
+}

@@ -23,10 +23,6 @@
         </table>
 
 
-
-        <p>debug: sort: {{ currentSort }}, dir: {{ currentSortDir }}</p>
-
-        <div class="data">{{ users }}</div>
       </div>
     </section>
   </div>

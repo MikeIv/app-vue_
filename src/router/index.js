@@ -26,6 +26,11 @@ const routes = [
     component: () => import( '../views/Users.vue')
   },
   {
+    path: '/notification',
+    name: 'Notification',
+    component: () => import( '../views/Notification.vue')
+  },
+  {
     path: '*',
     name: 'NotFound',
     component: () => import( '../views/404.vue')

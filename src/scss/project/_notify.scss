@@ -1,6 +1,7 @@
 .notify {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
 
   width: 30rem;
@@ -14,4 +15,27 @@
   border-radius: 1rem;
   @include b-shadow;
 
+}
+
+.notify__h2 {
+  margin-bottom: 2rem;
+  font-size: $m-Fs;
+}
+
+.notify__list {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  width: 100%;
+}
+
+.notify__item {
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+  min-height: 3rem ;
+
+  font-size: $s-Fs;
 }

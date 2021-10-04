@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import  notify from '@/components/Notify.vue'
+import  notify from '@/components/Notify'
 
 export default {
   name: "Notification",
@@ -19,6 +19,7 @@ export default {
       { title: 'message 1' },
       { title: 'message 2' },
       { title: 'message 3' },
+      { title: 'message 4' },
     ]
   }),
 }

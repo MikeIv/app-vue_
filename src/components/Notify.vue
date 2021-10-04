@@ -1,7 +1,8 @@
 <template>
 <div class="notify">
+  <h2 class="notify__h2">Уведомления</h2>
 <ul class="notify__list">
-  <li class="notify__item" v-for="message in messages">{{ title }}</li>
+  <li class="notify__item" v-for="message in messages" :key="message.title"><p>{{ message.title }}</p></li>
 </ul>
 </div>
 </template>
@@ -16,7 +17,6 @@ export default {
     },
     title: {
       type: String,
-
 },
   },
 }

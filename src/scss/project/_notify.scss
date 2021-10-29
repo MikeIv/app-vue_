@@ -5,13 +5,13 @@
   align-items: center;
 
   width: 30rem;
-  min-height: 40rem;
+  min-height: 30rem;
 
   margin: 0 auto;
   padding: 2rem;
   box-sizing: border-box;
 
-  background-color: lighten($lightgray, 4%);
+  background-color: lighten($vue, 47%);
   border-radius: 1rem;
   @include b-shadow;
 
@@ -20,6 +20,11 @@
 .notify__h2 {
   margin-bottom: 2rem;
   font-size: $m-Fs;
+  color: $darkvue;
+}
+
+.notify__wrapper {
+  display: flex;
 }
 
 .notify__list {

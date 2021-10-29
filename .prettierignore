@@ -1,0 +1,11 @@
+.storybook
+.gitlab
+.helm
+.husky
+build/*
+dist/*
+CHANGELOG.md
+storybook-static/
+node_modules/
+/.git
+/.vscode

@@ -1,30 +1,43 @@
 <template>
   <div class="app">
     <section class="app__wrapper">
-      <notify :messages="messages" />
+      <div class="notify">
+        <h2 class="notify__h2">Уведомления</h2>
+        <div class="notify__wrapper">
+          <notify :notification="notification"/>
+        </div>
+      </div>
     </section>
   </div>
 </template>
 
 <script>
-import  notify from '@/components/Notify'
+import notify from '@/components/Notify';
+import axios from 'axios';
 
 export default {
-  name: "Notification",
+  name: 'Notification',
   components: {
-    notify
+    notify,
   },
   data: () => ({
-    messages: [
-      { title: 'message 1' },
-      { title: 'message 2' },
-      { title: 'message 3' },
-      { title: 'message 4' },
-    ]
+    notification: [],
   }),
-}
+  mounted() {
+    axios
+        .get('https://randomuser.me/api/?results=8')
+        .then((response) => {
+          this.notification = response.data.results;
+          console.log(this.notification);
+          return response;
+        })
+        .catch((error) => {
+          this.$emit('error');
+          console.log(error);
+        })
+        .then((response) => console.log(response));
+  },
+};
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

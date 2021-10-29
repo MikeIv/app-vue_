@@ -39,7 +39,6 @@
       <!--   ===========   -->
 
 
-
       <!--   App блок   -->
       <section class="app__block app__block--width">
         <h2 class="v-hidden">Простой блок</h2>
@@ -49,7 +48,7 @@
         <div class="app__item-add">
 
           <div class="app__txt-row">
-            <message v-if="message" :message="message" />
+            <message v-if="message" :message="message"/>
           </div>
 
           <newNote :note="note" @addItem="addNote"/>
@@ -59,7 +58,7 @@
         <div class="app__h-row">
           <h2 class="app__h-row-h2">{{ titlenotes }}</h2>
 
-          <search :value="search" @search="search = $event" />
+          <search :value="search" @search="search = $event"/>
 
           <!-- toggle -->
           <div class="app__h-row-toggle">
@@ -125,19 +124,13 @@
         </modal>
 
         <!--   Модальное окно с валидацией    -->
-
-        <modalvalidate v-show="modalValidate" @close="modalValidate = false" />
-
-
+        <modalvalidate v-show="modalValidate" @close="modalValidate = false"/>
       </section>
       <!--   ===========   -->
 
     </div>
   </div>
 </template>
-
-
-
 
 
 <script>
@@ -213,31 +206,31 @@ export default {
 
   }),
   methods: {
-    getText () {
+    getText() {
       console.log('проверка' + this.text)
       console.log(`значение текста ${this.text}`)
     },
-    getLowerText () {
+    getLowerText() {
       this.textLower = this.text.toLowerCase()
     },
 
     //  block2
-    getContent () {
+    getContent() {
       this.showContent = !this.showContent
     },
 
     //  App
-    addNote () {
+    addNote() {
       console.log(this.note)
 
       let {title, descr} = this.note
 
-      if(title === '') {
+      if (title === '') {
         this.message = 'Напишите название заголовка'
         return false
       }
 
-      this.notes.push ({
+      this.notes.push({
         title,
         descr,
         date: new Date(Date.now()).toLocaleString(),
@@ -247,12 +240,12 @@ export default {
       this.note.descr = ''
     },
 
-    removeNote (index) {
+    removeNote(index) {
       this.notes.splice(index, 1)
     },
 
     //  Modal
-    submit () {
+    submit() {
       console.log({
         name: this.modalTwo.name,
         email: this.modalTwo.email,
@@ -263,12 +256,12 @@ export default {
     },
   },
   computed: {
-    toLower () {
+    toLower() {
       return this.text.toLowerCase()
     },
 
     //  App
-    notesFilter () {
+    notesFilter() {
       let array = this.notes,
           search = this.search
       if (!search) return array
@@ -276,9 +269,8 @@ export default {
       //  Убираем пробелы и заглавные буквы
       search = search.trim().toLowerCase()
       //  Filter
-      array = array.filter(function (item)
-      {
-        if(item.title.toLowerCase().indexOf(search) !== -1 ){
+      array = array.filter(function (item) {
+        if (item.title.toLowerCase().indexOf(search) !== -1) {
           return item
         }
       })
